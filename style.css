@@ -1,0 +1,266 @@
+/* =========================================
+   1. VARIABLES & BASE (MOBILE-FIRST)
+   ========================================= */
+:root {
+    --primary: #1e3a8a;       /* Bleu universitaire profond */
+    --primary-hover: #1d4ed8; /* Bleu plus vif au survol */
+    --accent: #0ea5e9;        /* Bleu ciel pour les accents */
+    --bg: #f1f5f9;            /* Gris très doux pour le fond */
+    --surface: #ffffff;       /* Blanc pur pour les cartes */
+    --text: #1e293b;          /* Gris foncé lisible */
+    --text-muted: #64748b;    /* Gris secondaire */
+    --border: #cbd5e1;        /* Bordure fine */
+    --success: #16a34a;
+    --danger: #dc2626;
+    --radius: 10px;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+/* =========================================
+   2. EN-TÊTE & NAVIGATION
+   ========================================= */
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px 20px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+
+nav a:hover, nav a:active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================
+   3. CONTENEURS & SECTIONS
+   ========================================= */
+main, .container {
+    width: 92%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 6px;
+}
+
+/* =========================================
+   4. FORMULAIRES (INSCRIPTION & DÉPÔT)
+   ========================================= */
+form {
+    background: var(--surface);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-top: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem; /* Évite le zoom automatique sur mobile */
+    font-family: inherit;
+    background-color: #f8fafc;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: var(--surface);
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 13px 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background-color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+/* =========================================
+   5. BARRE DE RECHERCHE (BIBLIOTHÈQUE)
+   ========================================= */
+.search-section {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.search-section input {
+    flex: 1;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.search-section button {
+    padding: 0 18px;
+}
+
+/* =========================================
+   6. CARTES (TFC & PROFIL ÉTUDIANT)
+   ========================================= */
+.tfc-card, .tfc-card-perso, .card-profil {
+    background: var(--surface);
+    padding: 18px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+    border-left: 4px solid var(--primary);
+}
+
+.tfc-card h3, .tfc-card-perso h3 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.tfc-card p, .tfc-card-perso p, .card-profil p {
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+    color: var(--text);
+}
+
+.resume {
+    color: var(--text-muted) !important;
+    font-style: italic;
+    margin: 10px 0 !important;
+}
+
+/* Boutons d'action dans les cartes */
+.tfc-actions, .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.btn-lire {
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    padding: 9px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    flex: 1;
+}
+
+.btn-interagir {
+    background-color: #f1f5f9;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 9px 14px;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+.btn-interagir:hover {
+    background-color: #e2e8f0;
+}
+
+/* =========================================
+   7. MESSAGES & ADAPTATION GRAND ÉCRAN (PC)
+   ========================================= */
+#message, #depotMessage {
+    margin-top: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+    }
+
+    .btn-lire, .btn-interagir {
+        flex: initial;
+    }
+}
+
+

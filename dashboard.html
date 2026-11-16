@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIM - Tableau de bord Étudiant</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>UNIM - Espace Étudiant</h1>
+        <nav>
+            <a href="bibliotheque.html">Bibliothèque</a>
+            <a href="depot.html">Déposer un TFC</a>
+            <a href="#" id="logoutBtn" style="color: #ff4d4d;">Déconnexion</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="profile-section">
+            <h2>Mon Profil Académique</h2>
+            <div id="profilContainer">
+                <p>Chargement de vos informations...</p>
+            </div>
+        </section>
+
+        <section class="mes-tfc-section">
+            <h2>Mes Travaux Déposés</h2>
+            <div id="mesTfcContainer">
+                <p>Chargement de vos TFC...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script JavaScript du tableau de bord -->
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

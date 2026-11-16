@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIM - Déposer un TFC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>UNIM - Espace Étudiant</h1>
+        <nav>
+            <a href="bibliotheque.html">Bibliothèque</a>
+            <a href="#" id="logoutBtn">Déconnexion</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Déposer un nouveau Travail de Fin de Cycle (TFC)</h2>
+        <p>Remplissez les informations ci-dessous et téléchargez votre fichier PDF.</p>
+
+        <form id="depotForm">
+            <input type="text" id="titre" placeholder="Titre complet du TFC" required>
+            <textarea id="resume" placeholder="Résumé du TFC (150 mots minimum)" rows="5" required></textarea>
+            <input type="text" id="motsCles" placeholder="Mots-clés (séparés par des virgules)" required>
+            <input type="text" id="directeur" placeholder="Nom du Directeur de recherche" required>
+            
+            <select id="anneeAcademique" required>
+                <option value="">Sélectionner l'Année académique</option>
+                <option value="2025-2026">2025-2026</option>
+                <option value="2026-2027">2026-2027</option>
+            </select>
+
+            <label for="fichierPdf">Fichier PDF du TFC :</label>
+            <input type="file" id="fichierPdf" accept="application/pdf" required>
+
+            <button type="submit" id="submitBtn">Publier le TFC</button>
+        </form>
+        <p id="depotMessage"></p>
+    </main>
+
+    <script type="module" src="js/depot.js"></script>
+</body>
+</html>

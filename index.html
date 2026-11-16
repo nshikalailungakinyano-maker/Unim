@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIM - Connexion & Inscription Étudiant</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>UNIM - Bibliothèque Numérique</h1>
+        <nav>
+            <a href="bibliotheque.html">Accéder à la Bibliothèque (Visiteur)</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Boutons pour basculer entre Connexion et Inscription -->
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button type="button" id="tabLogin" style="flex: 1;">Se connecter</button>
+            <button type="button" id="tabRegister" style="flex: 1; background-color: #64748b;">Créer un compte</button>
+        </div>
+
+        <!-- =====================================
+             FORMULAIRE 1 : CONNEXION (DÉJÀ INSCRIT)
+             ===================================== -->
+        <section id="loginSection">
+            <h2>Connexion Étudiant</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Votre adresse e-mail" required>
+                <input type="password" id="loginPassword" placeholder="Votre mot de passe" required>
+                <button type="submit" id="loginBtn">Se connecter</button>
+            </form>
+        </section>
+
+        <!-- =====================================
+             FORMULAIRE 2 : INSCRIPTION (NOUVEAU COMPTE)
+             ===================================== -->
+        <section id="registerSection" style="display: none;">
+            <h2>Créer un compte Étudiant</h2>
+            <form id="registerForm">
+                <input type="text" id="nom" placeholder="Nom" required>
+                <input type="text" id="postnom" placeholder="Postnom">
+                <input type="text" id="prenom" placeholder="Prénom" required>
+                
+                <select id="sexe" required>
+                    <option value="">Sélectionner le Sexe</option>
+                    <option value="M">Masculin</option>
+                    <option value="F">Féminin</option>
+                </select>
+
+                <input type="text" id="matricule" placeholder="Matricule académique" required>
+                <input type="text" id="faculte" placeholder="Faculté (ex: Sciences)" required>
+                <input type="text" id="departement" placeholder="Département (ex: Informatique)" required>
+                <input type="text" id="promotion" placeholder="Promotion (ex: L2 LMD)" required>
+
+                <input type="email" id="email" placeholder="Adresse e-mail" required>
+                <input type="password" id="password" placeholder="Mot de passe (6 caractères min.)" required>
+
+                <button type="submit" id="registerBtn">S'inscrire</button>
+            </form>
+        </section>
+
+        <p id="message" style="margin-top: 15px; font-weight: bold; text-align: center;"></p>
+    </main>
+
+    <script type="module" src="js/auth.js"></script>
+</body>
+</html>

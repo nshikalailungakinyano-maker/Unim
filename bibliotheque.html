@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIM - Bibliothèque Numérique des TFC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>UNIM - Bibliothèque Numérique</h1>
+        <nav>
+            <a href="bibliotheque.html">Accueil / Bibliothèque</a>
+            <a href="index.html" id="authLink">Connexion / Inscription</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="Rechercher par titre, auteur ou mots-clés...">
+            <button id="searchBtn">Rechercher</button>
+        </section>
+
+        <section class="tfc-list-section">
+            <h2>Bibliothèque Publique des TFC</h2>
+            <!-- C'est ici que les cartes générées par le JS vont s'afficher proprement -->
+            <div id="tfcContainer">
+                <p>Chargement des TFC en cours...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- =====================================
+         MODALE DE LECTURE PDF INTÉGRÉE
+         ===================================== -->
+    <div id="pdfModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 1000; justify-content: center; align-items: center; padding: 10px;">
+        <div style="background: white; width: 100%; max-width: 900px; height: 92vh; border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <!-- Barre supérieure de la modale -->
+            <div style="background: var(--primary); color: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center;">
+                <h3 id="modalTitle" style="font-size: 1rem; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 80%;">Lecture du TFC</h3>
+                <button type="button" id="closeModalBtn" style="background: rgba(255,255,255,0.2); border: none; color: white; width: 35px; height: 35px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center;">&times;</button>
+            </div>
+            <!-- Cadre d'affichage du PDF -->
+            <div style="flex: 1; background: #e2e8f0; position: relative;">
+                <iframe id="pdfViewerFrame" src="" style="width: 100%; height: 100%; border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JavaScript pour charger les données -->
+    <script type="module" src="js/bibliotheque.js"></script>
+</body>
+</html>
